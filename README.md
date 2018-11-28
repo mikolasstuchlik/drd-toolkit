@@ -7,8 +7,8 @@ Projekt je ve fázi příprav.
 
 Discord: https://discord.gg/DgK8bqk
 
-Cílové platformy jsou Windows, Linux. 
-Navrhované jazyky vývoje Swift, Java. 
-Navrhované kódování dat JSON.
-Vývojový jazyk, jazyk dokumentace a lokalizace je čeština/slovenština.
-
+- Cílové platformy jsou Windows, Linux. 
+- Navrhované jazyky vývoje Swift, Java. 
+- Navrhované kódování dat JSON.
+- Navrhovaná knihovna GUI je GTK+
+- Vývojový jazyk, jazyk dokumentace a lokalizace je čeština/slovenština.
