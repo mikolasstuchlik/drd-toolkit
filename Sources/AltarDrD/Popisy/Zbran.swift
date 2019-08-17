@@ -3,13 +3,19 @@ public protocol SchopnyDrzetZbran {
 }
 
 // PPZ-PH:68
-public enum TypZbrane {
+public enum DrzeniZbrane {
     case jednorucni, obourucni
+}
+
+// PPZ-PH:68
+public enum TypZbrane {
+    case lehke, stredni, tezke
 }
 
 // PPZ-PH:68
 public protocol Zbran {
     var typ: TypZbrane { get }
+    var drzeni: DrzeniZbrane { get }
     var jmeno: String { get }
     var sila: Int { get }
     var utocnost: Int { get }

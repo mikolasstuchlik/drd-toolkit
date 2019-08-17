@@ -19,3 +19,9 @@ public extension Tabulka {
         return tabuka[obrance]?[utocnik] ?? 0
     }
 }
+
+// PPZ-PH:23
+public protocol AtributVelikost {
+    var velikost: TridaVelikosti { get }
+}
+
