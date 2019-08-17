@@ -1,13 +1,13 @@
-import RPGSpolecne
-
 public protocol Placeholder {}
 
 public protocol SoubojTvariVTvar {
 
-    typealias Utocnik = AtributRodovaZbran & 
-                        AtributVelikost & 
+    typealias Utocnik = AtributRasa &
+                        AtributZivoty &
+                        AtributOdolnost &
                         AtributSila & 
-                        SchopnyDrzetZbran 
+                        SchopnyDrzetZbran &
+                        Nalozeni
 
     typealias Obrance = AtributVelikost
 
@@ -36,13 +36,17 @@ public extension SoubojTvariVTvar {
         utocneCislo += hodNaUtok
 
         // Opravení výsledku
-        //let oprava
+        let oprava: Int
         /// Podle rozdílu velikostí
         let rozdilVelikosti = Tabulka.opravaPodleVelikosti(utocnik: utocnik.velikost, obrance: obrance.velikost)
         /// Podle počtu životů a odolnosti útořníka
+        let opravaOdolnost = Tabulka.postihZaZivotyAOdolnost(utocnik)
         /// Odečti postih za naložení
-        
-        return (0)
+        let postihZaNalozeni = Tabulka.miraNalozeni(jednotky: utocnik) == .velke ? -1 : 0
+
+        oprava = rozdilVelikosti + opravaOdolnost + postihZaNalozeni
+
+        return utocneCislo + oprava
     }
 
 }

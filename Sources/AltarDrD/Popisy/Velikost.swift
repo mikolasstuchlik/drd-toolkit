@@ -1,5 +1,3 @@
-import RPGSpolecne
-
 // PPZ-PH:23
 public enum TridaVelikosti {
     case A0, A, B, C, D, E
