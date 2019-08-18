@@ -1,4 +1,4 @@
-struct VychoziZbran: Zbran {
+struct VychoziZbran: ZbranNaBlizko {
     let typ: TypZbrane
     let drzeni: DrzeniZbrane
     let jmeno: String
@@ -9,10 +9,10 @@ struct VychoziZbran: Zbran {
     let cena: Int
 }
 
-public enum Zbrane {
+public enum ZbraneNaBlizko {
     case zadna, dyka, tesak, kratkyMec, obusek, palcat, savle, sirokyMec, sekera, kyj, mecBastard, dlouhyMec, valecneKladivo, remdih, hulOkovana, dveDyky, vidle, kopi, valecnaSekera, sudlice, pika, tesakADyka, kratkyMecADyka, cep, halapartna, obourucniMec, tezkyKyj, trojzubec, dveSavle, sirokyMecADyka, sirokyMecATesak
 
-    var popis: Zbran {
+    var popis: ZbranNaBlizko {
         switch self {
         case .zadna: 
         return VychoziZbran(typ: .lehke, drzeni: .jednorucni, jmeno: "žádná", sila: 0, utocnost: 0, obrana: -3, vaha: 0, cena: 9)

@@ -2,6 +2,11 @@ public protocol SchopnyDrzetZbran {
     var drzenaZbran: Zbran { get }
 }
 
+public enum Zbran {
+    case naBlizko(ZbranNaBlizko)
+    case naDalku(ZbranNaDalku)
+}
+
 // PPZ-PH:68
 public enum DrzeniZbrane {
     case jednorucni, obourucni
@@ -13,7 +18,7 @@ public enum TypZbrane {
 }
 
 // PPZ-PH:68
-public protocol Zbran {
+public protocol ZbranNaBlizko {
     var typ: TypZbrane { get }
     var drzeni: DrzeniZbrane { get }
     var jmeno: String { get }
@@ -24,4 +29,8 @@ public protocol Zbran {
     // var delka: Int { get }
     var vaha: Int { get }
     var cena: Int { get }
+}
+
+public protocol ZbranNaDalku {
+
 }

@@ -57,11 +57,6 @@ public protocol AtributZivoty {
     var soucasneZivoty: Int { get }
 }
 
-// PPZ-PH:23
-public protocol AtributVelikost {
-    var velikost: TridaVelikosti { get }
-}
-
 // PPZ-PH:26
 public protocol AtributSila {
     var sila: Int { get }

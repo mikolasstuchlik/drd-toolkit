@@ -23,9 +23,9 @@ public extension SoubojTvariVTvar {
         /// Zjisti bonus nebo postih za sílu
         let postihZaSilu = Tabulka.postihNeboBonus(proAtribut: utocnik.sila)
         /// Přičti sílu používané zbraně
-        let silaZbrane = utocnik.drzenaZbran.sila
+        let silaZbrane = 0//utocnik.drzenaZbran.sila
         /// Přičti bonus za rodovou zbraň
-        let rodovaZbran = utocnik.rodoveZbrane.contains(utocnik.drzenaZbran.jmeno) ? 1 : 0
+        let rodovaZbran = 0//.rodoveZbrane.contains(utocnik.drzenaZbran) ? 1 : 0
 
         utocneCislo = postihZaSilu + silaZbrane + rodovaZbran
 

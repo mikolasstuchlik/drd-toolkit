@@ -9,7 +9,7 @@ struct VýchozíRasa: AtributRasa {
 // PPZ-PH:68
 public enum Rasy {
     case hobit, trpaslik, kuduk, elf, clovek, barbar, kroll
-
+/*
     var popis: AtributRasa {
         switch self{
         case .hobit:
@@ -28,5 +28,6 @@ public enum Rasy {
             return VýchozíRasa(nazev: "kroll", velikost: .C, vrozenaSchopnost: [], rodoveZbrane: [Zbrane.tezkyKyj.popis.jmeno])
         }
     }
+*/
 }
 
