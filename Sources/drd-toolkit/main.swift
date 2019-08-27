@@ -108,4 +108,4 @@ if utocneCislo < 9000 {
     print("IT'S OVER 9000!!!! (\(utocneCislo))")
 }
 
-// Při opakovných startech si všimněte, že výsledek je pokaždé jiný. To kvůli tomu, že hod je "uvnitř" mechaniky a tedy se vykoná při každém refreshi znova. 
+// Při opakovných startech si všimněte, že výsledek je pokaždé jiný. To kvůli tomu, že hod je "uvnitř" mechaniky a tedy se vykoná při každém refreshi znova.
