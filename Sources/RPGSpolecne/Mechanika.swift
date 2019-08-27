@@ -1,3 +1,4 @@
+import Foundation
 
 /// Toto je experimentální funkce kompilátoru - function builder. Slouží především k implementaci tzv. DSL (Domain Specific Language). Jedná se vlasně o formu marka ve Swiftu, které nám umožňuje vytvářet mechaniky. DSL sice umožňují používat podmínky atd. my ale nic z toho v mechanikách používat nebudeme.
 @_functionBuilder
@@ -39,7 +40,7 @@ open class Krok<T>: Sledovatelny {
     private let operace: Operace
     
     /// Popis viditelný uživateli skrze kontext
-    open let popis: String
+    public let popis: String
     
     /// Krok následující po tomto kroku
     var dalsiKrok: Krok<T>?
@@ -78,7 +79,7 @@ open class Krok<T>: Sledovatelny {
     /// - Parameter popis: popis kroku viditelný skrze kontext
     /// - Parameter reduce: imperativní metoda která dostane na vstup pole výstupů z vnořených kroků a na výstup vloží instanci vlastního generického typu (nebo Void)
     /// - Parameter operace: blok podkroků stejného generického typu
-    public static func sPodkorky<U>(_ popis: String, reduce: @escaping (([U])->T), @MechanicBuilder _ operace:  (()->Krok<U>) ) -> Krok<T> {
+    public static func sPodkorky<U>(_ popis: String, reduce: @escaping (([U])->T), @Mechanika _ operace:  (()->Krok<U>) ) -> Krok<T> {
         let mechanika = operace()
         return Krok.init(popis, operace: { reduce(mechanika.evaluate(in: [])) }, podkrok: mechanika)
     }
