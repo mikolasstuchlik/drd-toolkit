@@ -16,4 +16,8 @@ final public class Mechanika<T> {
     public init(wrappedValue: T){
         value = wrappedValue
     }
+
+    func setVal(_ val: T) {
+        wrappedValue = val
+    }
 }
