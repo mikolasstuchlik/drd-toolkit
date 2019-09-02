@@ -8,7 +8,8 @@
             "name": "Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/.build/x86_64-unknown-linux/debug/${workspaceFolderBasename}",
+            "program": "${workspaceFolder}/.build/debug/${workspaceFolderBasename}",
+            "preLaunchTask": "Swift Build"
             //"args": ["-arg1", "-arg2"],
         }
     ]
