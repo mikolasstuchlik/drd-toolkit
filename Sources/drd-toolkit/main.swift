@@ -59,18 +59,18 @@ struct Hrac {
 @Mechanika
 func ziskejUtok(hrace hrac: Hrac, typSouboje: TypSouboje) -> Krok<Int> {
     Krok.sPodkorky("Sečteme a opravíme výsledek", reduce: { max(0, $0.reduce(0, +)) }) {
-        Krok("Hoď 1k6") { Int.random(in: 1...6) }
-        Krok("Získejme útočené číslo zbraně (vyber zbraň s největším útokem pro souboj typu \(typSouboje.rawValue). Pokud nemáš zbraň počítej -3") {
+        Krok<Int>("Hoď 1k6") { Int.random(in: 1...6) }
+        Krok<Int>("Získejme útočené číslo zbraně (vyber zbraň s největším útokem pro souboj typu \(typSouboje.rawValue). Pokud nemáš zbraň počítej -3") {
             var utok: Int? = nil
             switch typSouboje {
             case .naBlizko:
                 utok = hrac.zbrane.max { $0.utokNaBlizko < $1.utokNaBlizko }?.utokNaBlizko
             case .naDalku:
-                utok = hrac.zbrane.flatMap { $0 as? ZbranNaDalku }.max { $0.utokNaDalku < $1.utokNaDalku }?.utokNaDalku
+                utok = hrac.zbrane.compactMap { $0 as? ZbranNaDalku }.max { $0.utokNaDalku < $1.utokNaDalku }?.utokNaDalku
             }
             return utok ?? -3
         }
-        Krok.sPodkorky("Přičti bonusy za zdraví", reduce: { max(0, $0.reduce(0, +)) }) {
+        Krok<Int>.sPodkorky("Přičti bonusy za zdraví", reduce: { max(0, $0.reduce(0, +)) }) {
             Krok("Pokud máš víc jak 10 maximálního zdraví přičti podíl 10 (zaokrouhleno dolů)") {
                 return hrac.maximalniZdravi / 10
             }
