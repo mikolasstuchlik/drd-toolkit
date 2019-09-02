@@ -1,7 +1,7 @@
 import RPGSpolecne
 
 /*
- Na krátkém příkladu si demonstrujeme jak lze zkontruovat mechaniku. Cíl je, abychom byli schopni sledovat mechaniku "zevnitř" a upravovat její hodnoty. Toto implementovat pomocí imperativního kódu by byl nelehký úkol. Pomůžeme se tedy novou konstrukcí Swiftu, která se nazývá "Function Builders"
+ Na krátkém příkladu si demonstrujeme jak lze zkonstruovat mechaniku. Cíl je, abychom byli schopni sledovat mechaniku "zevnitř" a upravovat její hodnoty. Toto implementovat pomocí imperativního kódu by byl nelehký úkol. Pomůžeme se tedy novou konstrukcí Swiftu, která se nazývá "Function Builders"
  Function builders je blok, který obsahuje deklarace jednotlivých elementů a pomocí statických metod z nich udělá výstup odpovídající typu svého výstupu. Viz RPGSpolecne - Mechanika.swift.
  
  Mechanika kterou budeme implementovat je vymyšlená. Mohli bychom ji popsat takto:
